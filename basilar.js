@@ -16,7 +16,7 @@ function process(dir, htmlDoc, converter, containerId, prettify) {
     if (fs.statSync(currentPath).isDirectory()) {
 
       // Modify the path
-      const distPath = currentPath.replace('pages', 'docs');
+      const distPath = currentPath.replace('pages', 'dist');
 
       fs.mkdirSync(distPath);
 
@@ -36,13 +36,13 @@ function process(dir, htmlDoc, converter, containerId, prettify) {
           domspace(htmlDoc.window.document);
         }
 
-        let distPath = currentPath.replace('pages', 'docs');
+        let distPath = currentPath.replace('pages', 'dist');
         distPath = distPath.replace('.md', '.html');
 
         fs.writeFileSync(distPath, htmlDoc.window.document.documentElement.outerHTML, 'utf-8');
       }
       else {
-        const distPath = currentPath.replace('pages', 'docs');
+        const distPath = currentPath.replace('pages', 'dist');
         fs.copyFileSync(currentPath, distPath);
       }
     }
@@ -53,14 +53,14 @@ function run(containerId, prettify) {
   console.log('Basilar processing...');
 
   // Removing the "dist" folder.
-  fs.rmdirSync('docs', { recursive: true });
+  fs.rmdirSync('dist', { recursive: true });
 
   // Create the dist folder.
-  fs.mkdirSync('docs');
+  fs.mkdirSync('dist');
 
   // Copy the assets. // TODO: Make this a configuration setting ("basilar.json").
-  fs.copyFileSync('www/style.css', 'docs/style.css');
-  fs.copyFileSync('www/web.js', 'docs/web.js');
+  fs.copyFileSync('www/style.css', 'dist/style.css');
+  fs.copyFileSync('www/web.js', 'dist/web.js');
 
   // First get the HTML template
   const template = fs.readFileSync('www/index.html', 'utf-8');
@@ -74,7 +74,7 @@ function run(containerId, prettify) {
   // Loop through all the content.  
   process('pages', dom, converter, containerId, prettify);
 
-  console.log('Processing completed. Output available in "docs" folder.');
+  console.log('Processing completed. Output available in "dist" folder.');
 }
 
 run('content', true);
