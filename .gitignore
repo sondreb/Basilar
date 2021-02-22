@@ -1,0 +1,3 @@
+# Ignore dist on this repository, but we'll create a template repo for Basilar later.
+/dist
+/node_modules
