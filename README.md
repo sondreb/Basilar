@@ -35,13 +35,7 @@ After you either copy the files in this repo or run clone, you can modify the co
 
 All content within "pages" will be replicated into the "dist" output, except for the .md files which will be transformed into .html.
 
-# Basic or Automated
-
-You can use Basilar in two manners, one of them is manually running the build process and commiting the generated output to your repository. You can then very easily use GitHub Pages to host your "/docs" output.
-
-The more advanced way of using Basilar, is to use the GitHub Actions which will automatically build the "/docs" output on a GitHub Agent and publish this to the "gp_pages" branch, which will then be published to GitHub Pages.
-
-The second option is prefered if you don't want to mix the output and your markdown, the first option is fine for smaller projects.
+The GitHub Action will publish the "dist" output into the "gh-pages" branch which can be setup to be published to GitHub Pages.
 
 # Q&A
 
