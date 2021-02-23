@@ -95,6 +95,11 @@ h4 {
     padding-bottom: 1em;
 }
 
+h2 {
+    padding-left: 1em;
+    padding-bottom: 1em;
+}
+
 .logo-icon {
     height: 23px;
     float: left;
