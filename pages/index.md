@@ -9,3 +9,10 @@ Basilar is basic, will always be basic, but it does the job well if all you need
 [Portfolio](portfolio.md)
 
 [Right tool for the job](right-tool-for-the-job/index.md)
+
+
+www.google.com
+
+
+www.sondreb.com
+

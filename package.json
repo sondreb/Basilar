@@ -23,9 +23,9 @@
   },
   "homepage": "https://github.com/sondreb/Basilar#readme",
   "devDependencies": {
-    "showdown": "^1.9.1",
+    "domspace": "^2.0.0",
     "jsdom": "^16.4.0",
     "request": "^2.88.0",
-    "domspace": "^2.0.0"
+    "showdown": "git+https://github.com/sondreb/showdown.git"
   }
 }

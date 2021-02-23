@@ -6,7 +6,7 @@ const showdown = require('showdown');
 const domspace = require('domspace');
 const path = require('path');
 
-function process(dir, htmlDoc, converter, containerId, prettify) {
+function process(dir, htmlDoc, converter, containerId) {
   const files = fs.readdirSync(dir);
 
   files.forEach(function (file) {
@@ -20,7 +20,7 @@ function process(dir, htmlDoc, converter, containerId, prettify) {
 
       fs.mkdirSync(distPath);
 
-      process(currentPath, htmlDoc, converter, containerId, prettify);
+      process(currentPath, htmlDoc, converter, containerId);
     }
     else {
       const extension = path.extname(currentPath);
@@ -32,9 +32,7 @@ function process(dir, htmlDoc, converter, containerId, prettify) {
         htmlDoc.window.document.title = 'Hello!'; // TODO: Parse the markdown and set the title.
         htmlDoc.window.document.getElementById(containerId).innerHTML = content;
 
-        if (prettify) {
-          domspace(htmlDoc.window.document);
-        }
+        domspace(htmlDoc.window.document);
 
         let distPath = currentPath.replace('pages', 'dist');
         distPath = distPath.replace('.md', '.html');
@@ -49,7 +47,7 @@ function process(dir, htmlDoc, converter, containerId, prettify) {
   });
 }
 
-function run(containerId, prettify) {
+function run(containerId) {
   console.log('Basilar processing...');
 
   // Removing the "dist" folder.
@@ -61,18 +59,19 @@ function run(containerId, prettify) {
   // Copy the assets. // TODO: Make this a configuration setting ("basilar.json").
   fs.copyFileSync('www/style.css', 'dist/style.css');
   fs.copyFileSync('www/web.js', 'dist/web.js');
+  fs.copyFileSync('www/favicon.png', 'dist/favicon.png');
 
   // First get the HTML template
   const template = fs.readFileSync('www/index.html', 'utf-8');
 
   // Create the MD to HTML converter instance.
-  const converter = new showdown.Converter({ tables: true, strikethrough: true });
+  const converter = new showdown.Converter({ simplifiedAutoLink: true, tables: true, strikethrough: true });
 
   // Load the template into a DOM.
   const dom = new JSDOM(template);
 
   // Loop through all the content.  
-  process('pages', dom, converter, containerId, prettify);
+  process('pages', dom, converter, containerId);
 
   console.log('Processing completed. Output available in "dist" folder.');
 }
