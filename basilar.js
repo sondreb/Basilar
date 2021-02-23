@@ -2,10 +2,11 @@
 
 const fs = require('fs');
 const JSDOM = require('jsdom').JSDOM;
-const showdown = require('showdown');
+const showdown = require('showdown'); // This is our fork of showdown, which will auto-link to HTTPS as oppose to HTTP. Currently not in used, replaced with 'markdown-it'.
 const domspace = require('domspace');
 const path = require('path');
-var hljs = require('highlight.js'); // https://highlightjs.org/
+const hljs = require('highlight.js'); // https://highlightjs.org/
+const iterator = require('markdown-it-for-inline');
 
 // full options list (defaults)
 var md = require('markdown-it')({
@@ -36,17 +37,44 @@ var md = require('markdown-it')({
     if (lang && hljs.getLanguage(lang)) {
       try {
         return '<pre class="hljs"><code>' +
-               hljs.highlight(lang, str, true).value +
-               '</code></pre>';
-      } catch (__) {}
+          hljs.highlight(lang, str, true).value +
+          '</code></pre>';
+      } catch (__) { }
     }
 
     return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
   }
 });
 
-function process(dir, htmlDoc, converter, containerId) {
+var r = new RegExp('^(?:[a-z]+:)?//', 'i');
+
+md.use(iterator, 'url_new_win', 'link_open', function (tokens, idx) {
+
+  let url = tokens[idx].attrs[0][1];
+
+  // If the URL is relative, replace the ".md" ending with ".html".
+  if (!r.test(url) && url.endsWith(".md")) {
+    tokens[idx].attrs[0][1] = url.replace('.md', '.html');
+  }
+
+  //console.log(!r.test(url) + ": " + url);
+
+  //console.log(tokens[idx].attrs);
+  //console.log(tokens);
+  //console.log(idx);
+  //tokens[idx].attrPush([ 'target', '_blank' ]);
+});
+
+function isRelative(url) {
+  return (/^(\.){1,2}(\/){1,2}$/.test(url.slice(0, 3)) ||
+    /(\/){1,2}(\.){1,2}(\/){1,2}/.test(url));
+}
+
+function process(dir, template, converter, containerId) {
   const files = fs.readdirSync(dir);
+
+  // Load the template into a DOM. We currently do this for each iteration, to start off with a "fresh" DOM.
+  const htmlDoc = new JSDOM(template);
 
   files.forEach(function (file) {
 
@@ -59,7 +87,7 @@ function process(dir, htmlDoc, converter, containerId) {
 
       fs.mkdirSync(distPath);
 
-      process(currentPath, htmlDoc, converter, containerId);
+      process(currentPath, template, converter, containerId);
     }
     else {
       const extension = path.extname(currentPath);
@@ -69,13 +97,21 @@ function process(dir, htmlDoc, converter, containerId) {
         // const content = converter.makeHtml(markdown);
         const content = md.render(markdown);
 
-        htmlDoc.window.document.title = 'Hello!'; // TODO: Parse the markdown and set the title.
         htmlDoc.window.document.getElementById(containerId).innerHTML = content;
+
+        // Render the document title if there is any H1 tags available.
+        var h1s = htmlDoc.window.document.getElementsByTagName("H1");
+
+        if (h1s.length > 0) {
+          htmlDoc.window.document.title = h1s[0].innerHTML + ' - ' + htmlDoc.window.document.title;
+        }
 
         domspace(htmlDoc.window.document);
 
         let distPath = currentPath.replace('pages', 'dist');
         distPath = distPath.replace('.md', '.html');
+
+        // htmlDoc.window.document.innerHTML
 
         fs.writeFileSync(distPath, htmlDoc.window.document.documentElement.outerHTML, 'utf-8');
       }
@@ -107,11 +143,8 @@ function run(containerId) {
   // Create the MD to HTML converter instance.
   // const converter = new showdown.Converter({ simplifiedAutoLink: true, tables: true, strikethrough: true });
 
-  // Load the template into a DOM.
-  const dom = new JSDOM(template);
-
   // Loop through all the content.  
-  process('pages', dom, md, containerId);
+  process('pages', template, md, containerId);
 
   console.log('Processing completed. Output available in "dist" folder.');
 }

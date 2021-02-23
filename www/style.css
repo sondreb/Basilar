@@ -123,12 +123,17 @@ h2 {
     margin-bottom: 2em;
 }
 
+.post h3 {
+    transition: color 150ms;
+}
+
 .post:hover h3 {
     color: var(--foreground-alternative);
+    transition: color 300ms;
 }
 
 .post .abstract {
-     place-self: center;
+    place-self: center;
 }
 
 .post {
@@ -156,7 +161,7 @@ h2 {
 }
 
 .thumbnail img:hover {
-    box-shadow: 0 18px 32px 0 var(--shadow-hover);
+    box-shadow: 0 16px 24px 0 var(--shadow-hover);
     transition: box-shadow 750ms;
 }
 
@@ -247,7 +252,7 @@ label {
     }
 
     .app {
-        transform: scale(0.7);
+        transform: scale(0.6);
         top: 0.5em;
         right: 0.5em;
     }
@@ -258,5 +263,39 @@ label {
 
     footer {
         padding: 1.5em;
+    }
+
+    .post .abstract {
+        place-self: center;
+    }
+
+    /* .post {
+        display: grid;
+
+        grid-template-rows: repeat(2, 50%);
+        gap: 0.25em 1.2em;
+
+    } */
+
+    .post {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 50% 50%;
+        gap: 1.2em 0.25em;
+    }
+
+    h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    h2,
+    h3,
+    h4 {
+        font-family: "Playfair Display", serif;
     }
 }

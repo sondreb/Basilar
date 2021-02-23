@@ -2,8 +2,8 @@
 
 ## Hi, there! I'm a speaker, software architect, programmer, writer, voluntaryist, and transhumanist. I also make videos, take photos, build private cities and work with blockchain technology. I do a little bit of everything.
 
-<!-- This structure is easier to just do with HTML. -->
-<a class="post" href="portfolio.md">
+<!-- This structure is easier to just do with HTML. URLs won't be parsed as this is HTML, so we have to manually link to .html and not .md -->
+<a class="post" href="portfolio.html">
     <div class="thumbnail"><img src="https://utenstat.no/wp-content/uploads/2019/06/runner-768x405.jpg"></div>
     <div class="abstract">
         <h3>Kommer vi videre?</h3>
@@ -14,7 +14,7 @@
     </div>
 </a>
 
-<a class="post" href="portfolio.md">
+<a class="post" href="portfolio.html">
     <div class="thumbnail"><img src="http://utenstat.no/wp-content/uploads/2016/11/boys-768x400.jpg"></div>
     <div class="abstract">
         <h3>Mennesket og intelligens</h3>
@@ -25,9 +25,6 @@
         <p class="date">May 2019 - 8 min read</p>
     </div>
 </a>
-
-
-
 
 # Welcome to Basilar
 

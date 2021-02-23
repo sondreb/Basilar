@@ -27,6 +27,7 @@
     "highlight.js": "^10.6.0",
     "jsdom": "^16.4.0",
     "markdown-it": "^12.0.4",
+    "markdown-it-for-inline": "^0.1.1",
     "request": "^2.88.0",
     "showdown": "git+https://github.com/sondreb/showdown.git"
   }
