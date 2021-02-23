@@ -44,3 +44,9 @@ A: To make your life easier, you can modify the generator directly to fit your n
 
 Q: Can I read the HTML template from an URL?   
 A: Sure, just modify the code.
+
+
+## Plugins to consider adding:
+
+https://www.npmjs.com/package/markdown-it-include
+

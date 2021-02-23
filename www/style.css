@@ -118,7 +118,17 @@ h2 {
 } */
 
 .post {
+    text-decoration: none;
+    color: var(--foreground);
     margin-bottom: 2em;
+}
+
+.post:hover h3 {
+    color: var(--foreground-alternative);
+}
+
+.post .abstract {
+     place-self: center;
 }
 
 .post {
