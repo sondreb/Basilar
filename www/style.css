@@ -38,8 +38,9 @@ body[data-theme="dark"] {
     --positive: #7cfc00;
     --negative: #f80606;
 
-    --shadow: rgba(255, 255, 255, 0.3);
-    --shadow-hover: rgba(255, 255, 255, 0.6);
+    --shadow: rgba(0, 0, 0, 0.6);
+    --shadow-hover: rgba(0, 0, 0, 1);
+
     --box-background: #0f0f0f;
 
     --mode-filter: invert(96%);
