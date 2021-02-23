@@ -19,7 +19,6 @@ body {
     --shadow: rgba(0, 0, 0, 0.3);
     --shadow-hover: rgba(0, 0, 0, 0.6);
     --box-background: #f5f5f5;
-
 }
 
 body[data-theme="dark"] {
@@ -44,7 +43,6 @@ body[data-theme="dark"] {
     --box-background: #0f0f0f;
 
     --mode-filter: invert(96%);
-
 }
 
 html,
@@ -138,6 +136,7 @@ h4 {
     /* border: 1px solid var(--foreground-light); */
     background-color: var(--box-background);
     transition: box-shadow 350ms;
+    border-radius: 5px;
 }
 
 .thumbnail img:hover {
@@ -224,4 +223,24 @@ label {
 
 .toggle[type="checkbox"]:checked + .app .circle {
     background: linear-gradient(40deg, #8983f7, #a3dafb 70%);
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    .app {
+        transform: scale(0.7);
+        top: 0.5em;
+        right: 0.5em;
+    }
+
+    .content {
+        padding: 1.5em;
+    }
+
+    footer {
+        padding: 1.5em;
+    }
 }
