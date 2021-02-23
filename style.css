@@ -61,14 +61,7 @@ body {
     overflow-x: hidden;
 }
 
-.content {
-    padding: 3em;
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-footer {
+.content, .header, footer {
     padding: 3em;
     max-width: 960px;
     margin-left: auto;
@@ -257,7 +250,7 @@ label {
         right: 0.5em;
     }
 
-    .content {
+    .content, .header, footer {
         padding: 1.5em;
     }
 
