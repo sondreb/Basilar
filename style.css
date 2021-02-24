@@ -446,4 +446,9 @@ label {
         margin-top: 0;
         padding-top: 0;
     }
+
+    .seperator {
+        margin-left: 0.2em;
+        margin-right: 0.2em;
+    }
 }
