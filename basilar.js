@@ -106,7 +106,8 @@ function process(dir, template, converter, containerId) {
           htmlDoc.window.document.title = h1s[0].innerHTML + ' - ' + htmlDoc.window.document.title;
         }
 
-        domspace(htmlDoc.window.document);
+        // Disabled until this issue has been fixed: https://github.com/papandreou/domspace/issues/25
+        // domspace(htmlDoc.window.document);
 
         let distPath = currentPath.replace('pages', 'dist');
         distPath = distPath.replace('.md', '.html');
