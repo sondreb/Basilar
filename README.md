@@ -39,7 +39,7 @@ The GitHub Action will publish the "dist" output into the "gh-pages" branch whic
 
 ## IMPORTANT
 
-You must modify the "gh-pages.yml" and change the "cname: basilar.sondreb.com" into your own domain. If you don't, the custom domain settings will be reset on each deployment.
+You must modify the "CNAME" file and change domain in the file to your own e.g. "www.mydomain.com".
 
 # Q&A
 
