@@ -12,6 +12,15 @@
     </div>
 </a>
 
+<a class="post" href="welcome-to-basilar">
+    <div class="thumbnail"><img src="markdown-sample/tuomas-haapala-fEw9RsoDEq4-unsplash.jpg"></div>
+    <div class="abstract">
+        <h3>Markdown Sample (demo)</h3>
+        <p class="p1">This sample is taken from the markdown-it demo ...</p>
+        <p class="date">February 2020 - 1 min read</p>
+    </div>
+</a>
+
 <a class="post" href="kommer-vi-videre">
     <div class="thumbnail"><img src="kommer-vi-videre/runner-768x405.jpg"></div>
     <div class="abstract">
