@@ -12,7 +12,7 @@
     </div>
 </a>
 
-<a class="post" href="welcome-to-basilar">
+<a class="post" href="markdown-sample">
     <div class="thumbnail"><img src="markdown-sample/tuomas-haapala-fEw9RsoDEq4-unsplash.jpg"></div>
     <div class="abstract">
         <h3>Markdown Sample (demo)</h3>
