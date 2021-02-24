@@ -89,6 +89,10 @@ footer {
     margin-right: auto;
 }
 
+.content img {
+    width: 100%;
+}
+
 .header {
     padding-bottom: 0;
 }
@@ -184,6 +188,7 @@ hr {
 
 .social-links a:hover {
     color: var(--accent);
+    text-decoration: none !important;
 }
 
 .page-link {

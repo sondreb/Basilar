@@ -1,5 +1,7 @@
 # Kommer vi videre?
 
+**2019-06-10 | Sondre Bjellås**
+
 Nå har det vært over to år siden sist innlegg her på siden, og har vi kommet noe videre med mer frihet? Føler du at du har opplevd mer frihet i ditt liv, eller har det utviklet seg i motsatt retning?
 
 ![](runner-768x405.jpg)
