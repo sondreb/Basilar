@@ -1,10 +1,10 @@
 ---
 __Advertisement :)__
 
-- __[blockchain](https://www.blockcore.net/)__ - blockchain technology platform.
-- __[multi-chain block explorer](https://explorer.blockcore.net)__ - multi-chain block explorer.
+- __[Blockcore](https://www.blockcore.net/)__ - Blockchain technology platform.
+- __[Multi-Chain Block Explorer](https://explorer.blockcore.net)__ - Multi-Chain Block Explorer.
 
-You will like those projects!
+You will like those projects! This content is not visible in regular markdown editor, but rendered on website.
 
 ---
 
