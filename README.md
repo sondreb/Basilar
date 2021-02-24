@@ -37,6 +37,10 @@ All content within "pages" will be replicated into the "dist" output, except for
 
 The GitHub Action will publish the "dist" output into the "gh-pages" branch which can be setup to be published to GitHub Pages.
 
+## IMPORTANT
+
+You must modify the "gh-pages.yml" and change the "cname: basilar.sondreb.com" into your own domain. If you don't, the custom domain settings will be reset on each deployment.
+
 # Q&A
 
 Q: Why not publish Basilar as a CLI / package?   
