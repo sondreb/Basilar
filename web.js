@@ -1,3 +1,7 @@
+/* This is a basic and plain JavaScript file that will be copied to your website.
+You can use it to add your own custom scripts. The functions below is added to handle
+the dark and light theme modes, and persist the user selection across visits to your site. */
+
 function isDarkMode() {
     if (localStorage.getItem('theme')) {
         if (localStorage.getItem('theme') === 'dark') {
