@@ -166,9 +166,8 @@ hr {
     flex-direction: row;
 } */
 
-.social-links i {
+.social-links a {
     margin-right: 0.4em;
-    justify-self: right;
 }
 
 .footer a {
