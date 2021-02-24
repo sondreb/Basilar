@@ -136,6 +136,7 @@ function run(containerId) {
   fs.copyFileSync('www/style.css', 'dist/style.css');
   fs.copyFileSync('www/web.js', 'dist/web.js');
   fs.copyFileSync('www/favicon.png', 'dist/favicon.png');
+  fs.copyFileSync('CNAME', 'dist/CNAME');
 
   // First get the HTML template
   const template = fs.readFileSync('www/index.html', 'utf-8');
