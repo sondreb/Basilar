@@ -6,7 +6,6 @@ body {
 
     --foreground: #2e2e2e;
     --foreground-alternative: #969696;
-    --foreground-alternative: #969696;
     --foreground-light: #cdcdcd;
 
     --footer-background: #1f1f1f;
@@ -19,6 +18,8 @@ body {
     --shadow: rgba(0, 0, 0, 0.3);
     --shadow-hover: rgba(0, 0, 0, 0.6);
     --box-background: #f5f5f5;
+
+    --scrollbar: #666666;
 }
 
 body[data-theme="dark"] {
@@ -44,6 +45,8 @@ body[data-theme="dark"] {
     --box-background: #0f0f0f;
 
     --mode-filter: invert(96%);
+
+    --scrollbar: #585858;
 }
 
 html,
@@ -346,10 +349,24 @@ label {
     justify-self: right;
 }
 
-
 .self-center {
     place-self: center;
 }
+
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar);
+}
+
 
 @media only screen and (max-width: 860px) {
     .post {
