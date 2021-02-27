@@ -1,5 +1,7 @@
 'use strict';
 
+/* Basilar v0.0.2 */
+
 const configuration = {
   containerId: 'content',
   destination: 'dist', // Do not prefix these with "./"
@@ -118,7 +120,7 @@ function render(dir, template, converter) {
         var h1s = htmlDoc.window.document.getElementsByTagName("H1");
 
         if (h1s.length > 0) {
-          htmlDoc.window.document.title = h1s[0].innerHTML + ' - ' + htmlDoc.window.document.title;
+          htmlDoc.window.document.title = h1s[0].textContent + ' - ' + htmlDoc.window.document.title;
         }
 
         // Disabled until this issue has been fixed: https://github.com/papandreou/domspace/issues/25
