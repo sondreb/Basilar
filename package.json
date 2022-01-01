@@ -1,6 +1,6 @@
 {
   "name": "basilar",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Basilar - A free task app with the bare minimum of functionality",
   "main": "basilar.js",
   "scripts": {

@@ -21,7 +21,7 @@ Basilar let's you focus on your task, which is writing.
 
 Basilar is for developers who want an awesome way to maintain websites, relying on simple logic and GitHub Actions and GitHub Pages.
 
-Basilar is built on NodeJS, it does not require any fancy runtime that is not officially supported on your operating system.
+Basilar is built on Node.js, it does not require any fancy runtime that is not officially supported on your operating system.
 
 Basilar is not some fancy CLI that require you to learn a lot of commands.
 

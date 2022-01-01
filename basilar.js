@@ -178,8 +178,10 @@ function run(wipe) {
   console.log('Basilar processing...');
 
   if (wipe) {
-    // Removing the "dist" folder.
-    fs.rmdirSync(configuration.destination, { recursive: true });
+    if (fs.existsSync(configuration.destination)) {
+      // Removing the "dist" folder.
+      fs.rmdirSync(configuration.destination, { recursive: true });
+    }
 
     // Create the dist folder.
     fs.mkdirSync(configuration.destination);
