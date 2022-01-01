@@ -25,13 +25,13 @@
   "homepage": "https://github.com/sondreb/Basilar#readme",
   "devDependencies": {
     "domspace": "^2.0.0",
-    "highlight.js": "^10.6.0",
-    "jsdom": "^16.4.0",
+    "highlight.js": "^11.3.1",
+    "jsdom": "^19.0.0",
     "live-server": "^1.2.1",
-    "markdown-it": "^12.0.4",
+    "markdown-it": "^12.3.0",
     "markdown-it-emoji": "^2.0.0",
     "markdown-it-for-inline": "^0.1.1",
-    "node-watch": "^0.7.1",
+    "node-watch": "^0.7.2",
     "request": "^2.88.0",
     "showdown": "git+https://github.com/sondreb/showdown.git"
   }
